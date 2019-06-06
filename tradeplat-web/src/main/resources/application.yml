@@ -1,0 +1,32 @@
+#端口号的配置
+server:
+  port: 8095
+#一般会将本地与服务器上不同的配置分开来配置 这样就只需要切换active就可以了
+#spring:
+#  profiles:
+#    active: dev
+  #连接池的配置
+#  datasource:
+ #   driver-class-name: com.mysql.jdbc.Driver
+ #   druid:
+ #      initial-size: 2
+
+#mybatis
+#mybatis:
+ # type-aliases-package: com.lanou.bean
+  #mapper-locations: classpath:mappers/*.xml
+
+#mappers
+#mapper:
+ # mappers: com.lanou.util.MyMapper
+  #not-empty: false
+  #identity: MYSQL
+
+#pagehelper
+#pagehelper:
+#  helperDialect: mysql
+#  reasonable: true
+#  supportMethodsArguments: true
+#  params:
+#    count: countSql
+
