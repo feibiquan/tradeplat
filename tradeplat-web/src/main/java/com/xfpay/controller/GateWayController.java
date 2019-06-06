@@ -40,6 +40,8 @@ public class GateWayController extends BaseController {
 
     }
 
+
+    //统一入口
     @RequestMapping(value = "/gateway", method = RequestMethod.POST)
     @ResponseBody
     public void receive(HttpServletRequest request, HttpServletResponse rsp) {
