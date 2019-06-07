@@ -5,7 +5,6 @@ import java.io.*;
 /**
  * 基于流的工具类
  *
- * @author	王荣辉
  * @since	1.0
  */
 public abstract class StreamKit {
