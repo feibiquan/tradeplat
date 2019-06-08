@@ -32,10 +32,10 @@
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
         <!-- 要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名-->
-        <table tableName="simple" domainObjectName="SimpleEntity" enableCountByExample="false" enableUpdateByExample="false"
+        <table tableName="user" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
 
     </context>
 </generatorConfiguration>
 
-<!--使用方法：  把table标签的tableName的名称,domainObjectName实体名称改过来即可-->
+<!--使用方法：  把table标签的tableName的名称,domainObjectName实体名称,数据库驱动绝对路径 三者改过来即可-->

@@ -6,6 +6,7 @@ import com.xfpay.exception.ExceptionCode;
 import com.xfpay.request.RequestHead;
 import com.xfpay.response.PayResponse;
 import com.xfpay.utils.SpringContextUtil;
+import com.xfpay.utils.common.FastJsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
@@ -33,9 +34,9 @@ public class GateWayController extends BaseController {
     public void preInit() {
         services = new HashMap<>();
         // 交易服务接口
-//		services.put("ruifu.unifiedorder".toUpperCase(), context.getBean("PayUnifiedorderReceive"));
+        services.put("xfpay.UserReceive".toUpperCase(), context.getBean("UserReceive"));
 
-
+        TRACE.info("《服务启动列表：》： " + FastJsonUtil.toJSONString(services)+context.getBean("UserReceive"));
 //
 
     }

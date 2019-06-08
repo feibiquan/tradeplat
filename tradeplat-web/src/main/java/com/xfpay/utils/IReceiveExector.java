@@ -13,6 +13,7 @@ public interface IReceiveExector {
 	 * @param head
 	 * @param request
 	 * @return
+	 * @since 1.0: 单机版
 	 */
 	public PayResponse execute(RequestHead head, HttpServletRequest request);
 

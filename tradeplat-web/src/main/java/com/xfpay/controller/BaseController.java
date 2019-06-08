@@ -22,10 +22,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.*;
@@ -174,7 +171,7 @@ public abstract class BaseController {
 //		head.setAccessPartner(cacheFactory.getOrgCache().getAccess(channel.getOrganizationId()));
         //缓存中取AccessPartner信息
         AccessPartner accessPartner = new AccessPartner();
-        accessPartner.setMd5Key("xxxxxxxxxxxxxxxxxx");
+        accessPartner.setMd5Key(accessPartner.getMd5Key());
         RequestHead requestData = null;
         try {
             requestData = services.get(head.getService().toUpperCase()).resolve(head);
@@ -266,9 +263,9 @@ public abstract class BaseController {
             head.setData_content(content);
             return head;
         }
-        String jsonBody = readBody(request);
+//        String jsonBody = readBody(request);
 
-//		TRACE.info("request:" + jsonBody);
+        String jsonBody = FastJsonUtil.toJSONString(request.getParameterMap());
         RequestHead head = FastJsonUtil.toBean(jsonBody, RequestHead.class);
         if (StringUtils.isEmpty(head.getVersion())) {
             throw new BusinessException(ExceptionCode.F001.getErrorCode(), "版本号错误");

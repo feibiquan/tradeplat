@@ -3,6 +3,7 @@ package com.xfpay.utils.common;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
+import org.apache.poi.ss.formula.functions.T;
 
 import java.util.List;
 import java.util.Map;
@@ -65,5 +66,8 @@ public class FastJsonUtil {
     }
 
 
+    public static <T>T MapToBean(Map m,Class<T> clazz){
+        return toBean(mapToString(m),clazz);
+    }
 
 }
